@@ -1,4 +1,4 @@
 # Slot-Machine
 Slot Machine Game (Project 1 SEI)
 
-![Image Description](./wireframe.png)
+![Image Description](./Wireframe.png)
