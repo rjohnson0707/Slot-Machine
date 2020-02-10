@@ -1,0 +1,59 @@
+h1 {
+    text-align: center;
+    color: #feda4a;
+    font-family: 'Pathway Gothic One', sans-serif;
+}
+
+h3 {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+body {
+background-image: url(https://wallpaperplay.com/walls/full/b/e/4/124178.jpg);
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-column-gap: 10px;
+    height: 50vh;
+}
+
+.board {
+    display: grid;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    color: red;
+    outline: 2px solid white;
+    background-image: url(https://i.redd.it/gwrq4rs7hqo01.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.col {
+    background-image: url(https://i.pinimg.com/originals/73/db/97/73db97c0c4a9c9b009d69f21ea48ecdc.png);
+    background-position: center;
+    background-size: 50vh;
+    background-repeat: no-repeat;
+}
+
+.spin {
+    width: 100px;
+    height: 40px;
+}
+
+.score-box {
+    font-size: 30px;
+}
+
+
