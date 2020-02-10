@@ -23,11 +23,30 @@ let slot2 = document.getElementById('s2');
 let slot3 = document.getElementById('s3');
 let totalScore = document.querySelector('.score-box');
 let message = document.querySelector('h3');
-let bets = document.querySelectorAll('.bet');
+let bet1 = document.querySelector('.bet1');
+let bet2 = document.querySelector('.bet2');
+let bet3 = document.querySelector('.bet3');
+let spinner = document.querySelector('.spin');
 /*----- event listeners -----*/
 
-bets.addEventListener('click', betFunction);
-bets.addEventListener('click', hideFunction);
+bet1.addEventListener('click', function() {
+   console.log('button 1');
+})
+bet2.addEventListener('click', function() {
+    console.log('button 2');
+ })
+ bet3.addEventListener('click', function() {
+    console.log('button 3');
+ })
+
+spinner.addEventListener('click', function() {
+
+    message.innerHTML = 'Good Luck!';
+    
+    //function that spins each slot
+    
+    //function that determines winner
+})
 
 
 /*----- functions -----*/
