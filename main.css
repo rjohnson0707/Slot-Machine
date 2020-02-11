@@ -8,6 +8,8 @@ h3 {
     text-align: center;
     color: red;
     font-weight: bold;
+    font-size: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 a {color: red;}
@@ -42,11 +44,8 @@ background-position: center;
 }
 
 
-.col {
-    background-image: url(https://i.pinimg.com/originals/73/db/97/73db97c0c4a9c9b009d69f21ea48ecdc.png);
-    background-position: center;
-    background-size: 50vh;
-    background-repeat: no-repeat;
+.reset {
+    margin-top: 15px;
 }
 
 .spin {
