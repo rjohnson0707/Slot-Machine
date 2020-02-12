@@ -1,4 +1,7 @@
 /*----- constants -----*/
+let loseSound = new Audio("Saberblk.mp3");
+let winSound = new Audio("win.mp3");
+let lostSound = new Audio("fail.mp3");
 
 let player;
 
@@ -10,7 +13,6 @@ let images = [
 ]
 
 let spin;
-let score;
 
 
 /*----- app's state (variables) -----*/
@@ -27,6 +29,7 @@ let s2 = slot2.innerHTML;
 let slot3 = document.getElementById('s3');
 let s3 = slot3.innerHTML;
 let scoreEl = document.querySelector('.score-box');
+let score = Number(scoreEl);
 let message = document.querySelector('h3');
 let msg = message.innerHTML;
 let bet1 = document.getElementById('1');
@@ -105,16 +108,19 @@ bet2.addEventListener('click', function() {
         
         if (result1 === result2 && result1 === result3) {
             message.innerHTML = 'YOU WIN!';
-            scoreEl.innerHTML += 0;
+            scoreEl.innerHTML -= -100;
+            winSound.play();
         } else {
             message.innerHTML = 'You Lost... Try Again!'; 
-            scoreEl.innerHTML -= 100;
+            scoreEl.innerHTML -= 10;
+            loseSound.play();
         }
     }
     
     function loser() {
         if (scoreEl.innerHTML <= 0) {
             spinner.parentNode.removeChild(spinner);
+            lostSound.play();
         }
     }
     
