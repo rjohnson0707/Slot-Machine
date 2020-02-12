@@ -59,6 +59,7 @@ background-position: center;
 .spin {
     width: 100px;
     height: 40px;
+    visibility: hidden;
 }
 
 .score-box {

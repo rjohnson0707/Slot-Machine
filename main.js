@@ -45,31 +45,38 @@ bet1.addEventListener('click', function() {
   bet2.style.visibility = "hidden";
   bet3.style.visibility = "hidden";
   message.innerHTML = "GOOD LUCK!";
-  bet = 1;
+  bet = 10;
+  spinner.style.visibility = "visible";
 })
 bet2.addEventListener('click', function() {
     bet1.style.visibility = "hidden";
     bet3.style.visibility = "hidden";
     message.innerHTML = "GOOD LUCK!";
-    bet = 5;
+    bet = 50;
+    spinner.style.visibility = "visible";
  })
  bet3.addEventListener('click', function() {
     bet1.style.visibility = "hidden";
     bet2.style.visibility = "hidden";
     message.innerHTML = "GOOD LUCK!";
-    bet = 10;
+    bet = 100;
+    spinner.style.visibility = "visible";
  })
 
  
  spinner.addEventListener('click', function(e) {
-     score = 1000;
-     
+    init(); 
+
      spinSlot();
      
-     winner();
+     setTimeout(function() {
+         winner();
+     }, 3000);
      
-     loser();
-     spinner.style.visibility = "hidden";
+     setTimeout(function () {
+         loser(); 
+     }, 3000);
+     
      reset.style.visibility = "visible";
      
     })
@@ -109,11 +116,15 @@ bet2.addEventListener('click', function() {
         
         
         
-        slot1.append(slot1Image);
+       setTimeout(function() {
+           slot1.append(slot1Image);
+       }, 1000);
+       setTimeout(function() {
         slot2.append(slot2Image);
+    }, 2000);
+    setTimeout(function() {
         slot3.append(slot3Image);
-        
-        
+    }, 3000);        
     };
     
     function winner() {
@@ -134,6 +145,13 @@ bet2.addEventListener('click', function() {
             spinner.parentNode.removeChild(spinner);
             lostSound.play();
         }
+    }
+
+    function init() {
+        slot1.innerHTML = s1;
+        slot2.innerHTML = s2;
+        slot3.innerHTML = s3;
+        message.innerHTML = 'Good Luck!';
     }
     
     
