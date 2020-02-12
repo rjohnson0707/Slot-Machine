@@ -2,7 +2,7 @@
 let loseSound = new Audio("Saberblk.mp3");
 let winSound = new Audio("win.mp3");
 let lostSound = new Audio("fail.mp3");
-
+let mainSound = new Audio("starwars.mp3");
 let player;
 let bet;
 
@@ -71,11 +71,11 @@ bet2.addEventListener('click', function() {
      
      setTimeout(function() {
          winner();
-     }, 3000);
+     }, 1500);
      
      setTimeout(function () {
          loser(); 
-     }, 3000);
+     }, 1500);
      
      reset.style.visibility = "visible";
      
@@ -118,20 +118,20 @@ bet2.addEventListener('click', function() {
         
        setTimeout(function() {
            slot1.append(slot1Image);
-       }, 1000);
+       }, 500);
        setTimeout(function() {
         slot2.append(slot2Image);
-    }, 2000);
+    }, 1000);
     setTimeout(function() {
         slot3.append(slot3Image);
-    }, 3000);        
+    }, 1500);        
     };
     
     function winner() {
         
         if (result1 === result2 && result1 === result3) {
             message.innerHTML = 'YOU WIN!';
-            scoreEl.innerHTML -= -(bet * 100);
+            scoreEl.innerHTML -= -(bet * 10);
             winSound.play();
         } else {
             message.innerHTML = 'You Lost... Try Again!'; 
