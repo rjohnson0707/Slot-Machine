@@ -4,6 +4,7 @@ let winSound = new Audio("win.mp3");
 let lostSound = new Audio("fail.mp3");
 
 let player;
+let bet;
 
 let images = [
     {image: 'vader.jpg'},
@@ -41,14 +42,22 @@ let bets = document.querySelectorAll('.bet');
 /*----- event listeners -----*/
 
 bet1.addEventListener('click', function() {
-  console.log('button 1')
-
+  bet2.style.visibility = "hidden";
+  bet3.style.visibility = "hidden";
+  message.innerHTML = "GOOD LUCK!";
+  bet = 1;
 })
 bet2.addEventListener('click', function() {
-    console.log('button 2');
+    bet1.style.visibility = "hidden";
+    bet3.style.visibility = "hidden";
+    message.innerHTML = "GOOD LUCK!";
+    bet = 5;
  })
  bet3.addEventListener('click', function() {
-    console.log('button 3');
+    bet1.style.visibility = "hidden";
+    bet2.style.visibility = "hidden";
+    message.innerHTML = "GOOD LUCK!";
+    bet = 10;
  })
 
  
@@ -72,6 +81,9 @@ bet2.addEventListener('click', function() {
      message.innerHTML = msg;
      reset.style.visibility = "hidden";
      spinner.style.visibility = "visible";
+     bet1.style.visibility = "visible";
+     bet2.style.visibility = "visible";
+     bet3.style.visibility = "visible";
 
  })
     
@@ -108,11 +120,11 @@ bet2.addEventListener('click', function() {
         
         if (result1 === result2 && result1 === result3) {
             message.innerHTML = 'YOU WIN!';
-            scoreEl.innerHTML -= -100;
+            scoreEl.innerHTML -= -(bet * 100);
             winSound.play();
         } else {
             message.innerHTML = 'You Lost... Try Again!'; 
-            scoreEl.innerHTML -= 10;
+            scoreEl.innerHTML -= bet;
             loseSound.play();
         }
     }
