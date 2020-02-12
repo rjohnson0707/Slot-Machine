@@ -1,10 +1,31 @@
 # Slot-Machine
 Slot Machine Game (Project 1 SEI)
 
-Will be Star Wars Themed (Option for major wins & big Losses)
+# Game
+STAR WARS SLOT MACHINE: Created by Will Johnson
 
+  This is simple JS/HTML/CSS designed slot machine game, made for a single player! It
+  includes a rules page if you have any questions in regard to the Point/Dollar System 
+  involved in the game. Pick your bet, and spin away! Good Luck!
+  
+# Screenshots
 ![Wireframe for HTML](./Wireframe.png)
 ![Psuedo-Code(written)](./Psuedo-Code(written).png)
-add Audio, INIT functions and render
+![Picture of game - Win](./gameWin.png)
+![Picture of game - Loss](./gameLose.png)
+![picture of starting player controls](./playerBox.png)
 
-Timed function to do one column at a time!
+# Link to Game + Instructions
+https://rjohnson0707.github.io/Slot-Machine/
+
+Steps: 
+1. Choose your bet (Bigger bet = Bigger reward)
+2. Push the button to trigger the Slot Machine
+3. Pray to whomever for a win!
+4. Repeat until Bored or out of Money/Points
+
+# Advancements 
+
+
+
+
