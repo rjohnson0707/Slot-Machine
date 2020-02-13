@@ -64,7 +64,7 @@ bet3.addEventListener('click', function() {
 playBtn.addEventListener('click', function(e) {
     init(); 
 
-    spinSlot();
+    playGame();
      
     setTimeout(function() {
         render();
@@ -93,7 +93,7 @@ reset.addEventListener('click', function() {
     
 /*----- functions -----*/
     
-function spinSlot() {
+function playGame() {
     result1 = images[Math.floor(Math.random() * images.length)]
     result2 = images[Math.floor(Math.random() * images.length)]
     result3 = images[Math.floor(Math.random() * images.length)]
