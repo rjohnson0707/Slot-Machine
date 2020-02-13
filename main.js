@@ -1,8 +1,8 @@
 /*----- constants -----*/
-let loseSound = new Audio("Saberblk.mp3");
-let winSound = new Audio("win.mp3");
-let lostSound = new Audio("fail.mp3");
-let mainSound = new Audio("starwars.mp3");
+let loseSound = new Audio("Sounds/Saberblk.mp3");
+let winSound = new Audio("Sounds/win.mp3");
+let lostSound = new Audio("Sounds/fail.mp3");
+let mainSound = new Audio("Sounds/starwars.mp3");
 let player;
 let bet;
 
