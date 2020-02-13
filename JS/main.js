@@ -34,6 +34,7 @@ let playBtn = document.querySelector('.spin');
 let reset = document.querySelector('.reset');
 let bets = document.querySelectorAll('.bet');
 let board = document.querySelector('.board')
+
 /*----- event listeners -----*/
 
 bet1.addEventListener('click', function() {
@@ -43,6 +44,7 @@ bet1.addEventListener('click', function() {
   bet = 10;
   playBtn.style.visibility = "visible";
 })
+
 bet2.addEventListener('click', function() {
     bet1.style.visibility = "hidden";
     bet3.style.visibility = "hidden";
@@ -50,6 +52,7 @@ bet2.addEventListener('click', function() {
     bet = 50;
     playBtn.style.visibility = "visible";
  })
+ 
  bet3.addEventListener('click', function() {
     bet1.style.visibility = "hidden";
     bet2.style.visibility = "hidden";
