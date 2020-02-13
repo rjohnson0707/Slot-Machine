@@ -71,11 +71,11 @@ bet2.addEventListener('click', function() {
      
      setTimeout(function() {
          render();
-     }, 1500);
+     }, 1100);
      
      setTimeout(function () {
          loser(); 
-     }, 1500);
+     }, 1100);
      
      reset.style.visibility = "visible";
      
@@ -118,13 +118,13 @@ bet2.addEventListener('click', function() {
         
        setTimeout(function() {
            slot1.append(slot1Image);
-       }, 500);
+       }, 300);
        setTimeout(function() {
         slot2.append(slot2Image);
-    }, 1000);
+    }, 700);
     setTimeout(function() {
         slot3.append(slot3Image);
-    }, 1500);        
+    }, 1100);        
     };
     
     function render() {
