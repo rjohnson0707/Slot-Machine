@@ -1,10 +1,9 @@
 /*----- constants -----*/
+
 let loseSound = new Audio("Sounds/Saberblk.mp3");
 let winSound = new Audio("Sounds/win.mp3");
 let lostSound = new Audio("Sounds/fail.mp3");
 let mainSound = new Audio("Sounds/starwars.mp3");
-let player;
-let bet;
 
 let images = [
     {image: 'vader.jpg'},
@@ -13,13 +12,9 @@ let images = [
     {image: 'greenLs.gif'}
 ]
 
-let spin;
-
-
 /*----- app's state (variables) -----*/
 
-
-
+let bet;
 
 /*----- cached element references -----*/
 
@@ -35,7 +30,7 @@ let msg = message.innerHTML;
 let bet1 = document.getElementById('1');
 let bet2 = document.getElementById('2');
 let bet3 = document.getElementById('3');
-let spinner = document.querySelector('.spin');
+let playBtn = document.querySelector('.spin');
 let reset = document.querySelector('.reset');
 let bets = document.querySelectorAll('.bet');
 let board = document.querySelector('.board')
@@ -46,25 +41,25 @@ bet1.addEventListener('click', function() {
   bet3.style.visibility = "hidden";
   message.innerHTML = "GOOD LUCK!";
   bet = 10;
-  spinner.style.visibility = "visible";
+  playBtn.style.visibility = "visible";
 })
 bet2.addEventListener('click', function() {
     bet1.style.visibility = "hidden";
     bet3.style.visibility = "hidden";
     message.innerHTML = "GOOD LUCK!";
     bet = 50;
-    spinner.style.visibility = "visible";
+    playBtn.style.visibility = "visible";
  })
  bet3.addEventListener('click', function() {
     bet1.style.visibility = "hidden";
     bet2.style.visibility = "hidden";
     message.innerHTML = "GOOD LUCK!";
     bet = 100;
-    spinner.style.visibility = "visible";
+    playBtn.style.visibility = "visible";
  })
 
  
- spinner.addEventListener('click', function(e) {
+ playBtn.addEventListener('click', function(e) {
     init(); 
 
      spinSlot();
@@ -87,7 +82,7 @@ bet2.addEventListener('click', function() {
      slot3.innerHTML = s3;
      message.innerHTML = msg;
      reset.style.visibility = "hidden";
-     spinner.style.visibility = "visible";
+     playBtn.style.visibility = "visible";
      bet1.style.visibility = "visible";
      bet2.style.visibility = "visible";
      bet3.style.visibility = "visible";
@@ -154,7 +149,7 @@ bet2.addEventListener('click', function() {
     
     function loser() {
         if (scoreEl.innerHTML <= 0) {
-            spinner.parentNode.removeChild(spinner);
+            playBtn.parentNode.removeChild(playBtn);
             board.parentNode.removeChild(board);
             lostSound.play();
             message.innerHTML = 'THE EMPIRE HAS STRUCK BACK! YOU HAVE FAILED'
