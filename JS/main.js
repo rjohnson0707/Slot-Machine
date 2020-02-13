@@ -10,7 +10,7 @@ let images = [
     {image: 'blueLs.png'},
     {image: 'yoda.png'},
     {image: 'greenLs.gif'}
-]
+];
 
 /*----- app's state (variables) -----*/
 
@@ -43,7 +43,7 @@ bet1.addEventListener('click', function() {
   message.innerHTML = "GOOD LUCK!";
   bet = 10;
   playBtn.style.visibility = "visible";
-})
+});
 
 bet2.addEventListener('click', function() {
     bet1.style.visibility = "hidden";
@@ -51,120 +51,115 @@ bet2.addEventListener('click', function() {
     message.innerHTML = "GOOD LUCK!";
     bet = 50;
     playBtn.style.visibility = "visible";
- })
+});
  
- bet3.addEventListener('click', function() {
+bet3.addEventListener('click', function() {
     bet1.style.visibility = "hidden";
     bet2.style.visibility = "hidden";
     message.innerHTML = "GOOD LUCK!";
     bet = 100;
     playBtn.style.visibility = "visible";
- })
+});
 
- 
- playBtn.addEventListener('click', function(e) {
+playBtn.addEventListener('click', function(e) {
     init(); 
 
-     spinSlot();
+    spinSlot();
      
-     setTimeout(function() {
-         render();
-     }, 1100);
+    setTimeout(function() {
+        render();
+    }, 1100);
      
-     setTimeout(function () {
-         loser(); 
-     }, 1100);
+    setTimeout(function () {
+        loser(); 
+    }, 1100);
      
-     reset.style.visibility = "visible";
+    reset.style.visibility = "visible";
      
-    })
+});
 
- reset.addEventListener('click', function() {
-     slot1.innerHTML = s1;
-     slot2.innerHTML = s2;
-     slot3.innerHTML = s3;
-     message.innerHTML = msg;
-     reset.style.visibility = "hidden";
-     playBtn.style.visibility = "visible";
-     bet1.style.visibility = "visible";
-     bet2.style.visibility = "visible";
-     bet3.style.visibility = "visible";
+reset.addEventListener('click', function() {
+    slot1.innerHTML = s1;
+    slot2.innerHTML = s2;
+    slot3.innerHTML = s3;
+    message.innerHTML = msg;
+    reset.style.visibility = "hidden";
+    playBtn.style.visibility = "visible";
+    bet1.style.visibility = "visible";
+    bet2.style.visibility = "visible";
+    bet3.style.visibility = "visible";
 
- })
+});
     
+/*----- functions -----*/
     
-    /*----- functions -----*/
-    
-    
-    
-    function spinSlot() {
+function spinSlot() {
+    result1 = images[Math.floor(Math.random() * images.length)]
+    result2 = images[Math.floor(Math.random() * images.length)]
+    result3 = images[Math.floor(Math.random() * images.length)]
         
-        result1 = images[Math.floor(Math.random() * images.length)]
-        result2 = images[Math.floor(Math.random() * images.length)]
-        result3 = images[Math.floor(Math.random() * images.length)]
-        
-        const slot1Image = document.createElement('img')
+    const slot1Image = document.createElement('img')
         slot1Image.src = "images/" + result1.image
         
-        const slot2Image = document.createElement('img')
+    const slot2Image = document.createElement('img')
         slot2Image.src = "images/" + result2.image
         
-        const slot3Image = document.createElement('img')
+    const slot3Image = document.createElement('img')
         slot3Image.src = "images/" + result3.image
         
         
         
-       setTimeout(function() {
-           slot1.append(slot1Image);
-       }, 300);
-       setTimeout(function() {
-        slot2.append(slot2Image);
+    setTimeout(function() {
+       slot1.append(slot1Image);
+    }, 300);
+    setTimeout(function() {
+       slot2.append(slot2Image);
     }, 700);
     setTimeout(function() {
         slot3.append(slot3Image);
     }, 1100);        
-    };
+};
     
-    function render() {
+function render() {
         
-        if (result1 === images[0] && result2 === images[0] && result3 === images[0]) {
-            message.innerHTML = 'YOU MUST NOW JOIN THE DARK SIDE OF THE FORCE';
-            scoreEl.innerHTML -= (bet * 50);
-            loseSound.play();
-        } else if (result1 === images[1] && result2 === images[1] && result3 === images[1]) {
-            message.innerHTML = 'BIG WIN! OBI-WAN WOULD BE PROUD';
-            scoreEl.innerHTML -= -(bet * 50);
-            winSound.play();
-        } else if (result1 === images[2] && result2 === images[2] && result3 === images[2]) {
-            message.innerHTML = 'MEGA WIN! YOU ARE THE NEW LEADER OF THE REBELLION';
-            scoreEl.innerHTML -= -(bet * 100);
-            winSound.play();
-        } else if (result1 === images[3] && result2 === images[3] && result3 === images[3]) {
-            message.innerHTML = 'WINNER! THE EMPIRE IS WEAKENING!';
-            scoreEl.innerHTML -= -(bet * 25);
-            winSound.play();
-        } else  {
-            message.innerHTML = 'You Lost... Try Again!'; 
-            scoreEl.innerHTML -= bet;
-            loseSound.play();
-        }
+    if (result1 === images[0] && result2 === images[0] && result3 === images[0]) {
+        message.innerHTML = 'YOU MUST NOW JOIN THE DARK SIDE OF THE FORCE';
+        scoreEl.innerHTML -= (bet * 50);
+        loseSound.play();
+    } else if (result1 === images[1] && result2 === images[1] && result3 === images[1]) {
+        message.innerHTML = 'BIG WIN! OBI-WAN WOULD BE PROUD';
+        scoreEl.innerHTML -= -(bet * 50);
+        winSound.play();
+    } else if (result1 === images[2] && result2 === images[2] && result3 === images[2]) {
+        message.innerHTML = 'MEGA WIN! YOU ARE THE NEW LEADER OF THE REBELLION';
+        scoreEl.innerHTML -= -(bet * 100);
+        winSound.play();
+    } else if (result1 === images[3] && result2 === images[3] && result3 === images[3]) {
+        message.innerHTML = 'WINNER! THE EMPIRE IS WEAKENING!';
+        scoreEl.innerHTML -= -(bet * 25);
+        winSound.play();
+    } else  {
+        message.innerHTML = 'You Lost... Try Again!'; 
+        scoreEl.innerHTML -= bet;
+        loseSound.play();
     }
+};
     
-    function loser() {
-        if (scoreEl.innerHTML <= 0) {
-            playBtn.parentNode.removeChild(playBtn);
-            board.parentNode.removeChild(board);
-            lostSound.play();
-            message.innerHTML = 'THE EMPIRE HAS STRUCK BACK! YOU HAVE FAILED'
-        }
+function loser() {
+    if (scoreEl.innerHTML <= 0) {
+        playBtn.parentNode.removeChild(playBtn);
+        board.parentNode.removeChild(board);
+        lostSound.play();
+        message.innerHTML = 'THE EMPIRE HAS STRUCK BACK! YOU HAVE FAILED'
     }
+};
 
-    function init() {
-        slot1.innerHTML = s1;
-        slot2.innerHTML = s2;
-        slot3.innerHTML = s3;
-        message.innerHTML = 'GOOD LUCK!';
-    }
+function init() {
+    slot1.innerHTML = s1;
+    slot2.innerHTML = s2;
+    slot3.innerHTML = s3;
+    message.innerHTML = 'GOOD LUCK!';
+};
     
     
     
