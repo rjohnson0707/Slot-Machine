@@ -7,9 +7,9 @@ STAR WARS SLOT MACHINE: Created by Will Johnson
   involved in the game. Pick your bet, and spin away! Good Luck!
   
 # Screenshots
-![Picture of game - Win](./images/gameWin.png)
-![Picture of game - Loss](./images/gameLose.png)
 ![picture of starting player controls](./images/playerBox.png)
+![Picture of game - Loss](./images/gameLose.png)
+![Picture of game - Win](./images/gameWin.png)
 
 # Link to Game + Instructions
 https://rjohnson0707.github.io/Slot-Machine/
