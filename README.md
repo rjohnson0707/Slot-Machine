@@ -11,6 +11,9 @@ STAR WARS SLOT MACHINE: Created by Will Johnson
 ![Picture of game - Loss](./images/gameLose.png)
 ![Picture of game - Win](./images/gameWin.png)
 
+# Technology Used
+Javascript, HTML, CSS
+
 # Link to Game + Instructions
 https://rjohnson0707.github.io/Slot-Machine/
 
@@ -21,6 +24,10 @@ Steps:
 4. Repeat until Bored or out of Money/Points
 
 # Advancements 
+  COMING SOON
+  -Rolling images to imitate Slot Machine feel.
+  -More potential win/loss scenarios
+  -Real betting functionality? Lets hope so!
 
 
 
