@@ -30,7 +30,6 @@ let s2 = slot2.innerHTML;
 let slot3 = document.getElementById('s3');
 let s3 = slot3.innerHTML;
 let scoreEl = document.querySelector('.score-box');
-let score = Number(scoreEl);
 let message = document.querySelector('h3');
 let msg = message.innerHTML;
 let bet1 = document.getElementById('1');
@@ -39,6 +38,7 @@ let bet3 = document.getElementById('3');
 let spinner = document.querySelector('.spin');
 let reset = document.querySelector('.reset');
 let bets = document.querySelectorAll('.bet');
+let board = document.querySelector('.board')
 /*----- event listeners -----*/
 
 bet1.addEventListener('click', function() {
@@ -70,7 +70,7 @@ bet2.addEventListener('click', function() {
      spinSlot();
      
      setTimeout(function() {
-         winner();
+         render();
      }, 1500);
      
      setTimeout(function () {
@@ -127,13 +127,25 @@ bet2.addEventListener('click', function() {
     }, 1500);        
     };
     
-    function winner() {
+    function render() {
         
-        if (result1 === result2 && result1 === result3) {
-            message.innerHTML = 'YOU WIN!';
-            scoreEl.innerHTML -= -(bet * 10);
+        if (result1 === images[0] && result2 === images[0] && result3 === images[0]) {
+            message.innerHTML = 'YOU MUST NOW JOIN THE DARK SIDE OF THE FORCE';
+            scoreEl.innerHTML -= (bet * 50);
+            loseSound.play();
+        } else if (result1 === images[1] && result2 === images[1] && result3 === images[1]) {
+            message.innerHTML = 'BIG WIN! OBI-WAN WOULD BE PROUD';
+            scoreEl.innerHTML -= -(bet * 50);
             winSound.play();
-        } else {
+        } else if (result1 === images[2] && result2 === images[2] && result3 === images[2]) {
+            message.innerHTML = 'MEGA WIN! YOU ARE THE NEW LEADER OF THE REBELLION';
+            scoreEl.innerHTML -= -(bet * 100);
+            winSound.play();
+        } else if (result1 === images[3] && result2 === images[3] && result3 === images[3]) {
+            message.innerHTML = 'WINNER! THE EMPIRE IS WEAKENING!';
+            scoreEl.innerHTML -= -(bet * 25);
+            winSound.play();
+        } else  {
             message.innerHTML = 'You Lost... Try Again!'; 
             scoreEl.innerHTML -= bet;
             loseSound.play();
@@ -143,7 +155,9 @@ bet2.addEventListener('click', function() {
     function loser() {
         if (scoreEl.innerHTML <= 0) {
             spinner.parentNode.removeChild(spinner);
+            board.parentNode.removeChild(board);
             lostSound.play();
+            message.innerHTML = 'THE EMPIRE HAS STRUCK BACK! YOU HAVE FAILED'
         }
     }
 
@@ -151,7 +165,7 @@ bet2.addEventListener('click', function() {
         slot1.innerHTML = s1;
         slot2.innerHTML = s2;
         slot3.innerHTML = s3;
-        message.innerHTML = 'Good Luck!';
+        message.innerHTML = 'GOOD LUCK!';
     }
     
     
