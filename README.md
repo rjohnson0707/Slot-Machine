@@ -1,6 +1,4 @@
 # Slot-Machine
-Slot Machine Game (Project 1 SEI)
-
 # Game
 STAR WARS SLOT MACHINE: Created by Will Johnson
 
@@ -9,8 +7,8 @@ STAR WARS SLOT MACHINE: Created by Will Johnson
   involved in the game. Pick your bet, and spin away! Good Luck!
   
 # Screenshots
-![Wireframe for HTML](./Wireframe.png)
-![Psuedo-Code(written)](./Psuedo-Code(written).png)
+![Wireframe for HTML](./images/Wireframe.png)
+![Psuedo-Code(written)](./images/Psuedo-Code(written).png)
 ![Picture of game - Win](./gameWin.png)
 ![Picture of game - Loss](./gameLose.png)
 ![picture of starting player controls](./playerBox.png)
