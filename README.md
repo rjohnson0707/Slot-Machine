@@ -25,9 +25,12 @@ Steps:
 
 # Advancements 
   COMING SOON
+  -Fix the Audio Error occurring
+  -Mobile Version
   -Rolling images to imitate Slot Machine feel.
   -More potential win/loss scenarios
   -Real betting functionality? Lets hope so!
+  
 
 
 
