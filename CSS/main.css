@@ -48,7 +48,10 @@ background-position: center;
     justify-items: center;
     align-items: center;
     align-content: center;
-    padding-left: 90px;
+    margin-left: 100px;
+    background-color: white;
+    width: 200px;
+    height: 200px;
 }
 
 .reset {
